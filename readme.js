@@ -41,20 +41,22 @@ const getEventMethod = target => {
   )
 }
 
-const fromEvents(target, eventToListen) => (start, sink) => {
-  if (start !== 0) return;
-
+const fromEvents = (target, eventToListen) => {
   const [subscriber, unsubscriber] = getEventMethod(target)
 
-  const handler = value => {
-    sink(1, value)
+  return (start, sink) => {
+    if (start !== 0) return;
+
+    const handler = value => {
+      sink(1, value)
+    }
+
+    sink(0, t => {
+      if(t === 2) target[unsubscriber](eventToListen, handler)
+    })
+
+    target[subscriber](eventToListen, handler)
   }
-
-  sink(0, t => {
-    if(t === 2) target[unsubscriber](eventToListen, handler)
-  })
-
-  target[subscriber](eventToListen, handler)
 }
 
 module.exports = fromEvents
