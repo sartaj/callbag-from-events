@@ -4,7 +4,7 @@
  * # callbag-from-events
  *
  * Create a Callbag from:
- * - an object with on/off methods,
+ * - any object with on/off methods,
  * - a DOM EventTarget,
  * - or a Node.JS EventEmitter.
  *
