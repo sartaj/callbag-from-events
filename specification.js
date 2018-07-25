@@ -71,7 +71,7 @@ describe('callbag-from-events', assert => {
   it('should create and remove am event from a off/on object', assert => {
     assert.plan(4)
 
-    const elem = {  
+    const onOffEventEmitter = {  
       on: (name, listener) => {
         assert.equals(name, 'beep', 'on for beep');
         setTimeout(() => {
@@ -83,7 +83,7 @@ describe('callbag-from-events', assert => {
       }
     }
 
-    const fromBeep = fromEvents(elem, 'beep');
+    const fromBeep = fromEvents(onOffEventEmitter, 'beep');
 
     pipe(
       fromBeep,
