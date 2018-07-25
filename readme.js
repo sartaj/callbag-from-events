@@ -23,6 +23,7 @@
  *     const processCompleted = fromEvents(ipcMain, 'process-completed')
  * 
  */
+
 const fromEvents = (target, eventToListen) => {
   const pairs = [
     ['on', 'off'],
