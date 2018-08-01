@@ -4,9 +4,12 @@
   "description": "Create a Callbag from any object with on/off methods, a DOM EventTarget, or a Node.JS EventEmitter.",
   "main": "readme.js",
   "scripts": {
-    "test": "node specification.js"
+    "test": "node specification.js",
+    "performance": "node performance.js"
   },
-  "files": ["readme.js"],
+  "files": [
+    "readme.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sartaj/callbag-from-events.git"
