@@ -1,5 +1,3 @@
-
-
 /**
  * # callbag-from-events
  *

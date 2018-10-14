@@ -1,7 +1,7 @@
 const describe = require('tape')
 
 const { pipe, forEach } = require('callbag-basics') 
-const fromEvents = require('./readme')
+const fromEvents = require('./index')
 
 describe('callbag-from-events', assert => {
   const it = assert.test
